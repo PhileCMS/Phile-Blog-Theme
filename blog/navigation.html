@@ -1,0 +1,13 @@
+<header id="header">
+  <div class="inner clearfix">
+    <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
+    <ul class="nav">
+      {% for page in pages %}
+      {# make sure we are not loading any pages with a post template #}
+      {% if page.meta.template != 'post' %}
+      <li><a href="{{ page.url }}" {% if page.url == current_page.url[1:] %}class="active"{% endif %}>{{ page.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</header>

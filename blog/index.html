@@ -1,0 +1,28 @@
+{# any markdown file that does not have a template set will use this index.html file to display their contents #}
+{% include 'header.html' with {'type': 'index'} %}
+{% include 'navigation.html' %}
+	<section id="content">
+		<div class="inner">
+			{{ content }}
+			{# only show the blog roll on the homepage. so we check to see if the title matches #}
+			{% if current_page.title == 'Homepage' %}
+				<hr>
+				<h2>Latest Posts</h2>
+				{% for page in pages %}
+					{# check if the page uses the post template #}
+					{% if page.meta.template == 'post' %}
+						<article>
+							<h3><a href="{{ page.url }}">{{ page.meta.title }}</a></h3>
+							<span class="post-date">Date: <em>{{ page.meta.date|date(config.date_format) }}</em></span><br>
+							<span class="post-category">Category: <em>{{ page.meta.category }}</em></span><br>
+							<span class="post-keywords">Keywords: <em>{{ page.meta.keywords }}</em></span><br>
+							{# remove the formatting and limit the string to 300 characters #}
+							<p>{{ page.content|striptags|slice(0, 300) }}...</p>
+							<a href="{{ page.url }}" title="{{ page.title }}" class="btn">Read More</a>
+						</article>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
+	</section>
+{% include 'footer.html' %}

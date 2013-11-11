@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <base href="{{ base_url }}/" />
+  {# here are some conditions so that the proper meta data shows #}
+  <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+  {% if meta.template == 'post' %}
+  <meta property="og:type" content="article" />
+  {% endif %}{% if meta.description %}
+  <meta name="description" content="{{ meta.description }}">
+  <meta property="og:description" content="{{ meta.description }}" />
+  <meta itemprop="description" content="{{ meta.description }}">
+  {% endif %}{% if meta.keywords %}
+  <meta property="og:keywords" content="{{ meta.keywords }}">
+  <meta property="article:keywords" content="{{ meta.keywords }}" />
+  <meta itemprop="keywords" content="{{ meta.keywords }}">
+  {% endif %}{% if meta.robots %}
+  <meta name="robots" content="{{ meta.robots }}">
+  {% endif %}{% if meta.title %}
+  <meta itemprop="name" content="{{ meta.title }}">
+  {% endif %}{% if meta.date %}
+  {# dates need to be in ISO 8601 (YYYY-MM-DD) for schema.org metas #}
+  <meta itemprop="dateCreated" content="{{ meta.date|date("Y-m-d") }}">
+  {% endif %}{% if meta.updated %}
+  <meta itemprop="dateModified" content="{{ meta.updated|date("Y-m-d") }}">
+  {% endif %}
+  <meta property="og:title" content="{{ current_page.title }} | {{ site_title }}" />
+  <meta property="og:url" content="{{ current_page.url }}" />
+  <meta property="og:site_name" content="{{ site_title }}" />
+  <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="{{ theme_url }}/css/tomorrow-night.css" type="text/css" />
+</head>
+{# conditional classes based on include data. useful for conditional CSS or JS #}
+<body {% if type %}class="{{ type }}"{% endif %}>

@@ -1,0 +1,18 @@
+{# since our posts have the template set as 'post', they will use this theme file #}
+{% include 'header.html' with {'type': 'post'} %}
+{% include 'navigation.html' %}
+<section id="content">
+	<div class="inner">
+		<article>
+			{# use the current page meta to show some info about this post #}
+			<h2><a href="{{ current_page.url }}">{{ current_page.meta.title }}</a></h2>
+			{# format the date here to be the one from the config #}
+			<span class="post-date">Date: <em>{{ current_page.meta.date|date(config.date_format) }}</em></span><br>
+			<span class="post-category">Category: <em>{{ current_page.meta.category }}</em></span><br>
+			<span class="post-keywords">Keywords: <em>{{ current_page.meta.keywords }}</em></span><br>
+			<p>{{ content }}</p>
+			<a href="{{ base_url }}" title="Homepage" class="btn">Back Home</a>
+		</article>
+	</div>
+</section>
+{% include 'footer.html' %}
