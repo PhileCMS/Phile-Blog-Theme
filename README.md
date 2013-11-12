@@ -48,7 +48,9 @@ Now we have a little bit of unpacking / adjusting to do.  Open Phile-Blog-Theme-
 
 That should be it.  When you have completed the above, point your browser to your newly installed Phile CMS, and you should see something like this screenshot:
 <hr>
+
 ![Blog install screen shot](content/blog-screenie.jpg "Blog install screenshot")
+
 <hr>
 
 ### Next?
