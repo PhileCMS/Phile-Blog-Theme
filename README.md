@@ -1,8 +1,3 @@
-/*
-Title: Phile-Blog-Theme Readme
-Description: This is a theme developed to showcase how blogging works on Phile
-*/
-
 Phile-Blog-Theme
 ================
 
