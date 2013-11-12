@@ -1,3 +1,8 @@
+/*
+Title: Phile-Blog-Theme Readme
+Description: This is a theme developed to showcase how blogging works on Phile
+*/
+
 Phile-Blog-Theme
 ================
 
@@ -48,14 +53,12 @@ Now we have a little bit of unpacking / adjusting to do.  Open Phile-Blog-Theme-
 
 That should be it.  When you have completed the above, point your browser to your newly installed Phile CMS, and you should see something like this screenshot:
 <hr>
-
-![Blog install screen shot](content/blog-screenie.jpg "Blog install screenshot")
-
+![Blog install screen shot](http://snippe.ca/sandbox/blog-screenie.jpg "Blog install screenshot")
 <hr>
 
 ### Next?
 
-This install has sample files for both pages and posts.  Take a look at the way they are set up... there is an important difference.  "Posts", which is what your blog entries are, have a Date:YYYY/MM/DD field up at the top.  "Pages" do not.  This is an important fact to keep in mind, as this is how Phile knows which is which, and is also how this blog theme sorts and shows the posts.  Further, the date meta makes sure that blog posts do not show up in your page navigation.
+This install has sample files for both pages and posts.  Take a look at the way they are set up... there is an important difference.  "Posts", which is what your blog entries are, have a Date:YYYY/MM/DD field up at the top, between the .  "Pages" do not.  This is an important fact to keep in mind, as this is how Phile knows which is which, and is also how this blog theme sorts and shows the posts.  Further, the date meta makes sure that blog posts do not show up in your page navigation.
 
 Here is the 'header' for a blog post (from the samples provided):
 
