@@ -28,6 +28,14 @@
   <meta property="og:title" content="{{ current_page.title }} | {{ site_title }}" />
   <meta property="og:url" content="{{ current_page.url }}" />
   <meta property="og:site_name" content="{{ site_title }}" />
+  <meta itemprop="legalName" content="{{ site_title }}">
+  {% if config.address %}
+  <meta itemprop="location" content="{{ config.address[0] }}, {{ config.address[1] }} {{ config.address[2] }}">
+  {% endif  %}{% if config.meta_image %}
+  <meta itemprop="image logo" content="{{ config.meta_image }}">
+  <meta property="og:image" content="{{ config.meta_image }}">
+  {% endif  %}
+  <link rel="shortcut icon" href="{{ theme_url }}/favicon.ico" />
   <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css" />
   <link rel="stylesheet" href="{{ theme_url }}/css/tomorrow-night.css" type="text/css" />
 </head>
